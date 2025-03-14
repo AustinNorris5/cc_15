@@ -11,6 +11,12 @@
         <h2>Risk Assessments</h2>
         <form id="riskForm">
             <input type="text" id="riskInput" placeholder="Enter risk description" required>
+            <select id="riskLevel">
+                <option value="Low">Low</option>
+                <option value="Medium" selected>Medium</option>
+                <option value="High">High</option>
+            </select>
+            <input type="text" id="department" placeholder="Enter department" required>
             <button type="submit">Add Risk</button>
         </form>
         <ul id="riskList"></ul>
