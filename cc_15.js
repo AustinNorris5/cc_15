@@ -6,7 +6,7 @@ const riskInput = document.getElementById("riskInput");
 const riskLevel = document.getElementById("riskLevel");
 const departmentInput = document.getElementById("department");
 const riskList = document.getElementById("riskList");
-
+const riskTemplate = document.getElementById("riskTemplate");
 
 //Print "Risk Dashboard Loaded" to the console
 console.log("Risk Dashboard Loaded");
@@ -16,10 +16,39 @@ console.log("Risk Dashboard Loaded");
 //Write a function addRiskItem(riskName, riskLevel, department)
 function addRiskItem(riskName, riskLevel, department) {
     const riskCard = document.createElement("div"); //Creates a new risk card (div)
-    riskCard.classList.add("riskCard"); //Assigns a class "riskCard" to each card
-   riskDashboard.appendChild(riskCard);
+    riskCard.style.display = "block";
+    riskCard.removeAttribute("id");
+
+    riskCard.querySelector(".riskName").textContent = riskName;
+    riskCard.querySelector(".riskLevel").textContent = riskLevel;
+    riskCard.querySelector(".department").textContent = department;
+
+//Task 4: Categorizing Risks by Level
+
+//Modify addRiskItem to apply different background colors based on risk level
+if (riskLevel === "Low") {
+    riskCard.classList.add("lowRisk");
+} else if (riskLevel === "Medium") {
+    riskCard.classList.add("mediumRisk");
+} else if (riskLevel === "High") {
+    riskCard.classList.add("highRisk");
+};
+
+//Task 3: Removing Risk Items
+
+//Modify addRiskItem to include a "Resolve" button
+const resolveButtonn = riskCard.querySelector(".resolveButton");
+    resolveButtonn.addEventListener("click", function() {
+        riskCard.remove(); 
+    });
+
+// Appends it to the riskDashboard
+    riskList.appendChild(newRiskCard);
 };
 
 //Test Case
 addRiskItem("Data Breach", "High", "IT");
 addRiskItem("Supply Chain Disruption", "Medium", "Operations");
+addRiskItem("Market Fluctuations", "High", "Finance");
+addRiskItem("Cybersecurity Threat", "High", "IT");
+addRiskItem("HR Compliance Issue", "Low", "Human Resources");

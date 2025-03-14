@@ -1,0 +1,29 @@
+.riskCard {
+    border: 1px solid #ccccccf5;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    position: relative;
+    color: rgba(0, 0, 0, 0.942);
+}
+
+.lowRisk {
+    background-color: rgb(118, 244, 118);
+}
+
+.mediumRisk {
+    background-color: rgb(244, 244, 28);
+}
+
+.highRisk {
+    background-color: rgb(242, 50, 50);
+}
+
+.resolveBtn {
+    background-color: rgb(247, 15, 15);
+    color: rgba(255, 255, 255, 0.928);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-top: 5px;
+}
