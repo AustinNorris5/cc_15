@@ -46,9 +46,20 @@ const resolveButtonn = riskCard.querySelector(".resolveButton");
     riskList.appendChild(newRiskCard);
 };
 
+//Task 5: Implementing Bulk Updates
+
+//Add a button to the dashboard labeled "Increase Risk Levels"
+increaseRiskButton.addEventListener("click", function() {
+    document.querySelectorAll(".riskCard").forEach(riskCard => {
+        const level = riskCard.querySelector(".riskLevel");
+        const currentLevel = level.textContent;
+    });
+});   
+
 //Test Case
 addRiskItem("Data Breach", "High", "IT");
 addRiskItem("Supply Chain Disruption", "Medium", "Operations");
 addRiskItem("Market Fluctuations", "High", "Finance");
 addRiskItem("Cybersecurity Threat", "High", "IT");
 addRiskItem("HR Compliance Issue", "Low", "Human Resources");
+addRiskItem("Employee Retention", "Low", "HR")
