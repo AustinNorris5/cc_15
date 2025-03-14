@@ -23,6 +23,14 @@ function addRiskItem(riskName, riskLevel, department) {
     riskCard.querySelector(".riskLevel").textContent = riskLevel;
     riskCard.querySelector(".department").textContent = department;
 
+//Task 6: Handling Event Propagation
+
+//Use stopPropagation() to ensure clicking inside a risk card does not trigger unwanted actions on the dashboard
+riskCard.addEventListener("click", function(event) {
+    event.stopPropagation(); 
+    console.log("Risk card clicked:", riskName);
+});
+
 //Task 4: Categorizing Risks by Level
 
 //Modify addRiskItem to apply different background colors based on risk level
